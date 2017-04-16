@@ -1,0 +1,22 @@
+/* Aca va tu CSS */
+body{
+	background-color: lightcoral;
+}
+
+h4 {
+	margin: 2px 5px 0 5px;
+}
+
+.todo{
+	display: inline-flex;
+	color: white;
+	border: 1px solid white;
+  margin: 5px;
+  padding: 5px;
+}
+
+.fa{
+	margin: 3px 3px;
+	color: white;
+
+}
