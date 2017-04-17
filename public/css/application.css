@@ -20,3 +20,70 @@ h4 {
 	color: white;
 
 }
+
+#todo_template .article_todo {
+  cursor: move;
+  border: 1px solid lightblue;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  min-width: 220px;
+}
+.todo_list{
+  position: relative;
+  margin: 20px 0px;
+}
+
+#todo_template .article_todo.over {
+  border: 2px dashed lightblue;
+}
+
+.article_todo .todo_action{
+  /*width: 32px;*/
+  display: flex;
+  align-items: center
+}
+
+.fa{
+  margin: 2px;
+  color: #ACE3CF;
+}
+
+.content{
+  margin-left: 5px;
+  text-align: start;
+}
+
+.cancel, input[type="submit"]{
+  color: #BFA100;
+  background-color: #ACE3CF;
+  border-top: 2px solid #d7ecff;
+  border-left: 2px solid #d7ecff;
+}
+
+input[type="text"]{
+  color: #8D8D8D ;
+  background-color: #FFDFC2;
+  margin: 15px 5px;
+  border: 1px solid #BFA100;
+  padding: 3px;
+}
+
+.tag .edit-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.edit_submit{
+
+}
+
+.article_todo input[name="content"]{
+  width: 150px;
+  margin: 5px 0px;
+}
+
+.check, .pending{
+  cursor: default
+}

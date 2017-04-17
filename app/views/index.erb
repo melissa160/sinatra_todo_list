@@ -1,4 +1,5 @@
 <h2>Ingresa una tarea</h2>
+<!-- formulario para adicionar ToDo -->
 <form class="crearTodo" action="/todos" method="POST">
   <input type="text" name="title">
   <input type="submit" value="Crear">
@@ -14,19 +15,39 @@
   
 </div>
 
+<!-- Template para renderizar la lista de ToDos -->
 <script id="todo-template" type="text/x-handlebars-template">
   {{#each todos}}
     <article class="todo">
       <span><i class="fa fa-thumb-tack" aria-hidden="true"></i> </span>
       <h4>{{title}}</h4>
+      <div class="append_edit"></div>
+      <a class="edit"  href="#" data-id="{{id}}" title="Editar Tarea"><i class="fa fa-pencil" aria-hidden="true"></i></a>
       <a class="delete"  href="/todos/{{id}}" title="Eliminar Tarea"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
       {{#if done}}
-        <a class="check"  href="/todos/{{id}}" title="Tarea Completa"><i class="fa fa-check" aria-hidden="true"></i></a>
+        <a class="check"  href="#" title="Tarea Completa"><i class="fa fa-check" aria-hidden="true"></i></a>
       {{else}}
-        <a class="pending"  href="/todos/{{id}}" title="Completar Tarea"><i class="fa fa-spinner" aria-hidden="true"></i></a>
+        <a class="pending"  href="#" title="Tarea pendiente"><i class="fa fa-spinner" aria-hidden="true"></i></a>
       {{/if}}
     </article>
   {{/each}}
+</script>
+
+<!-- Template para editar un ToDo -->
+<script id="edit_template" type="text/x-handlebars-template">
+  <form class="edit-form" method="post" action="/todos/{{id}}/edit">
+    <div>
+      <input type="hidden" name="_method" value="patch">
+      <input name="content" type="text" value="{{title}}">
+    </div>
+    <div class="check">
+      <input type="checkbox" id="done" name="done" value="{{done}}"> <label for="done">Task completed</label>
+    </div>
+    <div class="edit_submit">
+      <input class="save" type="submit" value="Save">
+      <input class="cancel" type="button" value="Cancel">
+    </div>
+  </form>
 </script>
 
 <!-- {"id"=>3926, "title"=>"Titulo de la tarea", "done"=>false, "created_at"=>"2017-04-16T19:31:26.593Z", "updated_at"=>"2017-04-16T19:31:26.593Z"} -->

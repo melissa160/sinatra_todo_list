@@ -17,20 +17,31 @@ post '/todos' do
   # end
 end
 
-patch '/todos/:id' do
+patch "/todos/:id/edit" do
   todo = Tarea.find(params[:id])
-  puts "incompleta #{params[:incompleta]}"
-  if params[:incompleta] == "incompleta"
-    puts "*"*60
-    puts "tarea completa"
-  else
-    puts "*"*60
-    puts "no entra  a incompleta"
-  end
-  todo["done"] = true
+  puts "*"*60
+  puts "#{params[:id]}"
+  todo_state = params[:done] == nil ? false : true 
+  todo["done"] = todo_state
+  todo["title"] = params[:title]
   Tarea.update(todo["id"])
-  redirect '/todos'
+  redirect "/todos"
 end
+
+# patch '/todos/:id' do
+#   todo = Tarea.find(params[:id])
+#   puts "incompleta #{params[:incompleta]}"
+#   if params[:incompleta] == "incompleta"
+#     puts "*"*60
+#     puts "tarea completa"
+#   else
+#     puts "*"*60
+#     puts "no entra  a incompleta"
+#   end
+#   todo["done"] = true
+#   Tarea.update(todo["id"])
+#   redirect '/todos'
+# end
 
 delete '/todos/:id' do
   Tarea.destroy(params[:id])
