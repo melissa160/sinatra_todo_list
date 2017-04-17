@@ -1,22 +1,47 @@
 /* Aca va tu CSS */
 body{
-	background-color: lightcoral;
+	background-color: gray;
+  margin: 20px;
+  font-family: 'Gloria Hallelujah', cursive;
+  text-align: center;
+
 }
 
 h4 {
 	margin: 2px 5px 0 5px;
 }
 
+h3{
+  color: aliceblue;
+}
+
 .todo{
 	display: inline-flex;
-	color: white;
-	border: 1px solid white;
+	color: antiquewhite;
+	border: 1px solid lightcoral;
   margin: 5px;
   padding: 5px;
+  max-width: 150px;
+  /*width:150px;*/
+  text-align: left;
+  word-break: break-all;
+  word-wrap: break-word;
 }
 
 .fa{
 	margin: 3px 3px;
-	color: white;
+	color: lightcoral;
 
+}
+
+.check {
+  cursor: default;
+}
+
+input[type="submit"]{
+  background-color: lightcoral;
+}
+
+input[type="text"]{
+  background-color: antiquewhite;
 }

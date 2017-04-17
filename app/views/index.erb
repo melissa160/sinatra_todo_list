@@ -1,30 +1,33 @@
-<h2>Ingresa una tarea</h2>
+
+<h3>Ingresa una tarea</h3>
 <form class="crearTodo" action="/todos" method="POST">
   <input type="text" name="title">
   <input type="submit" value="Crear">
 </form>
 
-<h2>Tareas pendientes</h2>
-<div id="todo-pendientes">
+<h3>Tareas pendientes</h3>
+<div id="todo-pendientes" class="todo-pendientes">
   
 </div>
 
-<h2>Tareas completadas</h2>
-<div id="todo-completados">
+<h3>Tareas completadas</h3>
+<div id="todo-completados" class="todo-completados">
   
 </div>
 
 <script id="todo-template" type="text/x-handlebars-template">
   {{#each todos}}
     <article class="todo">
+    <div>
       <span><i class="fa fa-thumb-tack" aria-hidden="true"></i> </span>
       <h4>{{title}}</h4>
       <a class="delete"  href="/todos/{{id}}" title="Eliminar Tarea"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
       {{#if done}}
-        <a class="check"  href="/todos/{{id}}" title="Tarea Completa"><i class="fa fa-check" aria-hidden="true"></i></a>
+        <span class="check" title="Tarea Completa"><i class="fa fa-check" aria-hidden="true"></i></span>
       {{else}}
         <a class="pending"  href="/todos/{{id}}" title="Completar Tarea"><i class="fa fa-spinner" aria-hidden="true"></i></a>
       {{/if}}
+    </div>
     </article>
   {{/each}}
 </script>

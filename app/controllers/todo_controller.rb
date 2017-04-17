@@ -6,6 +6,7 @@ end
 
 get '/todos'  do
   todos = Tarea.all
+  todos = todos.sort_by{ |t| t["id"] }
   content_type :json
   {todos: todos}.to_json
 end
