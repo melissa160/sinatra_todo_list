@@ -1,11 +1,19 @@
-### Quickstart
+# TODO LIST en Sinatra
 
-1.  `bundle install`
-2.  `shotgun config.ru`
+## Vista previa de la aplicación
+![App Preview](./public/todo_list_sinatra.jpg?raw=true "TodoList App Preview")
 
-Tareas de `rake`:
+## Descripción
+En este proyecto se construye una aplicación Web usando Sinatra, que le permita a los usuarios llevar un registro de tareas pendientes y completadas.
 
-```
-rake generate:migration  # Create an empty migration in db/migrate, e.g., rake generate:migration NAME=create_tasks
-rake generate:model      # Create an empty model in app/models, e.g., rake generate:model NAME=User
-```
+En la aplicación, los usuarios pueden realizar lo siguiente:
+
+* Ver la lista de tareas sin completar.
+* Ver la lista de tareas completadas.
+* Crear tareas.
+* Completar tareas.
+* Borrar tareas.
+
+La información se almacena en una base de datos remota. Pero en vez de interactuar directamente con la base de datos, se usa una gema llamada make_todo que facilita la interacción. Las instrucciones de cómo instalar y utilizar la gema se encuentran en [este enlace](https://github.com/makeitrealcamp/make_todo)
+
+
